@@ -49,6 +49,7 @@ public class MyMapNode<K, V> implements INode<K>
 	{
 		StringBuilder string = new StringBuilder();
 		string.append("MyMapNodes{" + "K=").append(key).append(" V=").append(value).append("}");
+		
 		if (next != null) 
 		{
 			string.append("->").append(next);

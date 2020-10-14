@@ -17,6 +17,7 @@ public class MyHashMapTest {
 		for (String word : words) 
 		{
 			Integer value = myHashMap.get(word);
+			
 			if (value == null) 
 			{
 				value = 1;
