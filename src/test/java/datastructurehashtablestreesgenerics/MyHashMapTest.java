@@ -18,7 +18,7 @@ public class MyHashMapTest {
 		{
 			Integer value = myHashMap.get(word);
 			
-			if (value == null) 
+				if (value == null) 
 			{
 				value = 1;
 			} 
@@ -34,3 +34,4 @@ public class MyHashMapTest {
 		assertEquals(2, frequency);
 	}
 }
+
