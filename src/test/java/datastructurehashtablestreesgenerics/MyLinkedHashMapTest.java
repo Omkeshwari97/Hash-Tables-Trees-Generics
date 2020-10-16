@@ -2,6 +2,8 @@ package datastructurehashtablestreesgenerics;
 
 import static org.junit.Assert.*;
 
+import java.util.Map;
+
 import org.junit.Test;
 
 public class MyLinkedHashMapTest {
@@ -30,7 +32,10 @@ public class MyLinkedHashMapTest {
 		}
 		System.out.println(myLinkedHashMap);
 		int frequency = myLinkedHashMap.get("paranoid");
-		assertEquals(3, frequency);
-	}
+		myLinkedHashMap.remove("avoidable");
 
+		assertEquals(3, frequency);
+		System.out.println(myLinkedHashMap);
+		
+	}
 }

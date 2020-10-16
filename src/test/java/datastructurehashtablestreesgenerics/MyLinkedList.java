@@ -10,14 +10,23 @@ public class MyLinkedList<K>
 	{
 		INode temp = head;
 		
-		while (temp != null && temp.getNext() != null) 
+		if (tail != null && tail.getKey().equals(key)) 
 		{
-			if (temp.getKey().equals(key)) 
-			{
-				return temp;
-			}
-			temp = temp.getNext();
+			return tail;
 		}
+		else 
+		{
+			
+			while (temp != null && temp.getNext() != null) 
+			{
+				if (temp.getKey().equals(key)) 
+				{
+					return temp;
+				}
+				temp = temp.getNext();
+			}
+		}
+		
 		return null;
 	}
 	
@@ -46,6 +55,28 @@ public class MyLinkedList<K>
 	public String toString() 
 	{
 		return "MyLinkedListNode{" + head + "}";
+	}
+
+	public void delete(INode<K> myNode) 
+	{
+		INode tempNode1 = head;
+		INode tempNode2 = head;
+		
+		if(head == tail)
+		{
+			head = null;
+			tail = null;
+		}
+		else 
+		{
+			while(!tempNode1.getKey().equals(myNode.getKey()) && !tempNode2.equals(tail))
+			{
+				tempNode2 = tempNode1;
+				tempNode1 = tempNode1.getNext();
+			}
+			
+			tempNode2.setNext(tempNode1.getNext());
+		}
 	}
 	
 }
